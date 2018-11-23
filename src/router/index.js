@@ -39,104 +39,17 @@ export const constantRouterMap = [
     ]
   },
   {
-    path: '/black_pipe',
+    path: '/infos',
     component: Layout,
-    redirect: '/black_pipe/list',
+    redirect: '/infos/1',
     name: '镀锌管管理',
-    meta: { title: '镀锌管管理', icon: 'example' },
+    meta: { title: '内容管理', icon: 'example' },
     children: [
       {
-        path: 'brandList',
-        name: '品牌管理',
-        component: () => import('@/views/blackPipe/brandList'),
-        meta: { title: '镀锌管品牌列表', icon: 'table' }
-      },
-      {
-        path: 'specList',
-        name: '规格列表',
-        component: () => import('@/views/blackPipe/specList'),
-        meta: { title: '规格列表', icon: 'table' }
-      },
-      {
-        path: 'priceList',
-        name: '价格管理',
-        component: () => import('@/views/blackPipe/priceList'),
-        meta: { title: '价格管理', icon: 'table' }
-      }
-    ]
-  },
-  {
-    path: '/order',
-    component: Layout,
-    redirect: '/order/allList',
-    name: '订单管理',
-    meta: { title: '订单管理', icon: 'example' },
-    children: [
-      {
-        path: 'freightList',
-        name: '运费管理',
-        component: () => import('@/views/order/freightList'),
-        meta: { title: '运费管理', icon: 'table' }
-      },
-      {
-        path: 'orderList',
-        name: '全部订单列表',
-        component: () => import('@/views/order/orderList'),
-        meta: { title: '全部订单列表', icon: 'table' }
-      },
-      {
-        path: 'checkingList',
-        name: '待验收列表',
-        component: () => import('@/views/order/checkingList'),
-        meta: { title: '待验收列表', icon: 'table' }
-      },
-      {
-        path: 'checkingErrorList',
-        name: '验收异常列表',
-        component: () => import('@/views/order/checkingErrorList'),
-        meta: { title: '验收异常列表', icon: 'table' }
-      },
-      {
-        path: 'processingList',
-        name: '加工中列表',
-        component: () => import('@/views/order/processingList'),
-        meta: { title: '加工中列表', icon: 'table' }
-      },
-      {
-        path: 'transportList',
-        name: '配送/自提列表',
-        component: () => import('@/views/order/transportList'),
-        meta: { title: '配送/自提列表', icon: 'table' }
-      }
-    ]
-  },
-  {
-    path: '/user',
-    component: Layout,
-    redirect: '/user/userList',
-    name: '用户管理',
-    meta: { title: '用户管理', icon: 'example' },
-    children: [
-      {
-        path: 'userList',
-        name: '用户信息列表',
-        component: () => import('@/views/user/userList'),
-        meta: { title: '用户信息列表', icon: 'table' }
-      }
-    ]
-  },
-  {
-    path: '/slideShow',
-    component: Layout,
-    redirect: '/slideShow/slideShowList',
-    name: '轮播图管理',
-    meta: { title: '轮播图管理', icon: 'example' },
-    children: [
-      {
-        path: 'slideShowList',
-        name: '轮播图列表',
-        component: () => import('@/views/slideShow/slideShowList'),
-        meta: { title: '轮播图列表', icon: 'table' }
+        path: '/1',
+        name: 'Rapid 7',
+        component: () => import('@/views/infos/infos'),
+        meta: { title: 'Rapid 7', icon: 'table' }
       }
     ]
   },
