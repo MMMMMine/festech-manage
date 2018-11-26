@@ -42,12 +42,12 @@ export default {
   },
   watch: {
     '$route'(to, from) {
-      this.form.id = this.$route.path.split('/')[1]
+      this.form.id = this.$route.path.split('/')[2]
       this.fetchData()
     }
   },
   created() {
-    this.form.id = this.$route.path.split('/')[1]
+    this.form.id = this.$route.path.split('/')[2]
     this.fetchData()
   },
   mounted() {

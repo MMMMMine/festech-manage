@@ -55,7 +55,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       template: "index.html",
       inject: true,
       favicon: resolve("favicon.ico"),
-      title: "果巢成品管后台管理系统",
+      title: "festech后台管理系统",
       minify: {
         removeComments: true,
         collapseWhitespace: true,

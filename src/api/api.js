@@ -16,3 +16,11 @@ export function addOrUpInfos(params) {
     data: params
   })
 }
+
+export function queryInfosListByType(params) {
+  return request({
+    url: '/v1/queryInfosListByType',
+    method: 'get',
+    params: params
+  })
+}

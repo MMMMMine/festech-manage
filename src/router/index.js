@@ -42,86 +42,107 @@ export const constantRouterMap = [
     path: '/infos',
     component: Layout,
     redirect: '/infos/1',
-    name: '镀锌管管理',
+    name: '内容管理',
     meta: { title: '内容管理', icon: 'example' },
     children: [
       {
-        path: '/1',
+        path: '/infos/1',
         name: 'Rapid 7',
         component: () => import('@/views/infos/infos'),
         meta: { title: 'Rapid 7', icon: 'table' }
       },
       {
-        path: '/2',
+        path: '/infos/2',
         name: 'Fortinet',
         component: () => import('@/views/infos/infos'),
         meta: { title: 'Fortinet', icon: 'table' }
       },
       {
-        path: '/3',
+        path: '/infos/3',
         name: 'DELL EMC',
         component: () => import('@/views/infos/infos'),
         meta: { title: 'DELL EMC', icon: 'table' }
       },
       {
-        path: '/4',
+        path: '/infos/4',
         name: '亚信安全',
         component: () => import('@/views/infos/infos'),
         meta: { title: '亚信安全', icon: 'table' }
       },
       {
-        path: '/5',
+        path: '/infos/5',
         name: 'ForeScout',
         component: () => import('@/views/infos/infos'),
         meta: { title: 'ForeScout', icon: 'table' }
       },
       {
-        path: '/6',
+        path: '/infos/6',
         name: 'Symantec',
         component: () => import('@/views/infos/infos'),
         meta: { title: 'Symantec', icon: 'table' }
       },
       {
-        path: '/7',
+        path: '/infos/7',
         name: '制造业',
         component: () => import('@/views/infos/infos'),
         meta: { title: '制造业', icon: 'table' }
       },
       {
-        path: '/8',
+        path: '/infos/8',
         name: '企业',
         component: () => import('@/views/infos/infos'),
         meta: { title: '企业', icon: 'table' }
       },
       {
-        path: '/9',
+        path: '/infos/9',
         name: '互联网行业',
         component: () => import('@/views/infos/infos'),
         meta: { title: '互联网行业', icon: 'table' }
       },
       {
-        path: '/10',
+        path: '/infos/10',
         name: '基础架构评估',
         component: () => import('@/views/infos/infos'),
         meta: { title: '基础架构评估', icon: 'table' }
       },
       {
-        path: '/11',
+        path: '/infos/11',
         name: '安全评估',
         component: () => import('@/views/infos/infos'),
         meta: { title: '安全评估', icon: 'table' }
       },
       {
-        path: '/12',
+        path: '/infos/12',
         name: 'RMA备件服务',
         component: () => import('@/views/infos/infos'),
         meta: { title: 'RMA备件服务', icon: 'table' }
       },
       {
-        path: '/13',
+        path: '/infos/13',
         name: '现场技术支持服务',
         component: () => import('@/views/infos/infos'),
         meta: { title: '现场技术支持服务', icon: 'table' }
+      }
+    ]
+  },
+  {
+    path: '/infosList',
+    component: Layout,
+    redirect: '/infosList/3',
+    name: '信息列表管理',
+    meta: { title: '信息列表管理', icon: 'example' },
+    children: [
+      {
+        path: '/infosList/3',
+        name: '成功案例管理',
+        component: () => import('@/views/infos/infosList'),
+        meta: { title: '成功案例管理', icon: 'table' }
+      },
+      {
+        path: '/infosList/4',
+        name: '公司动态管理',
+        component: () => import('@/views/infos/infosList'),
+        meta: { title: '公司动态管理', icon: 'table' }
       }
     ]
   },
