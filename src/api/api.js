@@ -7,3 +7,12 @@ export function queryInfosById(params) {
     params: params
   })
 }
+
+export function addOrUpInfos(params) {
+  return request({
+    url: '/v1/addOrUpInfos',
+    method: 'post',
+    contentType: 'application/json',
+    data: params
+  })
+}

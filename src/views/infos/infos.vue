@@ -3,13 +3,15 @@
     <el-row>
       <el-col :span="24">
         <el-form ref="form" :model="form">
-          <el-form-item label="上传图片" prop="cover">
+          <el-form-item label="图片" prop="cover">
             <el-upload :action="uploadUrl" :show-file-list="false" :on-success="handleAvatarSuccess" :before-upload="beforeAvatarUpload" class="avatar-uploader">
               <img v-if="form.cover" :src="form.cover" class="avatar">
               <i v-else class="el-icon-plus avatar-uploader-icon"/>
             </el-upload>
           </el-form-item>
-          <div id="editorElem" style="text-align:left"/>
+          <el-form-item prop="content">
+            <div id="editor" style="text-align:left"/>
+          </el-form-item>
           <el-form-item>
             <el-button type="primary" @click="onSubmit">确认提交</el-button>
           </el-form-item>
@@ -34,39 +36,52 @@ export default {
         content: ''
       },
       uploadUrl: process.env.BASE_API + 'v1/upload_pic',
-      uploadUrl2: '/v1/upload_pic2'
+      uploadUrl2: '/v1/upload_pic2',
+      editor: {}
+    }
+  },
+  watch: {
+    '$route'(to, from) {
+      this.form.id = this.$route.path.split('/')[1]
+      this.fetchData()
     }
   },
   created() {
+    this.form.id = this.$route.path.split('/')[1]
     this.fetchData()
   },
   mounted() {
-    var editor = new E('#editorElem')
-    editor.customConfig.uploadImgServer = process.env.BASE_API + 'v1/upload_pic2'
-    editor.customConfig.uploadFileName = 'file'
-    editor.customConfig.onchange = (html) => {
-      this.editorContent = html
+    this.editor = new E('#editor')
+    this.editor.customConfig.uploadImgServer = process.env.BASE_API + 'v1/upload_pic2'
+    this.editor.customConfig.uploadFileName = 'file'
+    this.editor.customConfig.onchange = (html) => {
+      this.form.content = html
     }
-    editor.create()
+    this.editor.create()
   },
   methods: {
     fetchData() {
       this.listLoading = true
       const params = {
-        id: 1
+        id: this.form.id
       }
       api.queryInfosById(params).then(response => {
-
+        this.form.cover = response.data.cover
+        this.form.content = response.data.content
+        this.editor.txt.clear()
+        this.editor.txt.html(response.data.content)
         this.listLoading = false
       })
     },
-    getContent: function() {
-      alert(this.editorContent)
-    },
     onSubmit() {
+      const params = this.form
+      // console.log(params)
+      api.addOrUpInfos(params).then(response => {
+        this.$message('操作成功')
+      })
     },
     handleAvatarSuccess(res, file) {
-      this.form.logo = res.data
+      this.form.cover = res.data
     },
     beforeAvatarUpload(file) {
       const isJPG = file.type === 'image/jpeg'

@@ -50,6 +50,78 @@ export const constantRouterMap = [
         name: 'Rapid 7',
         component: () => import('@/views/infos/infos'),
         meta: { title: 'Rapid 7', icon: 'table' }
+      },
+      {
+        path: '/2',
+        name: 'Fortinet',
+        component: () => import('@/views/infos/infos'),
+        meta: { title: 'Fortinet', icon: 'table' }
+      },
+      {
+        path: '/3',
+        name: 'DELL EMC',
+        component: () => import('@/views/infos/infos'),
+        meta: { title: 'DELL EMC', icon: 'table' }
+      },
+      {
+        path: '/4',
+        name: '亚信安全',
+        component: () => import('@/views/infos/infos'),
+        meta: { title: '亚信安全', icon: 'table' }
+      },
+      {
+        path: '/5',
+        name: 'ForeScout',
+        component: () => import('@/views/infos/infos'),
+        meta: { title: 'ForeScout', icon: 'table' }
+      },
+      {
+        path: '/6',
+        name: 'Symantec',
+        component: () => import('@/views/infos/infos'),
+        meta: { title: 'Symantec', icon: 'table' }
+      },
+      {
+        path: '/7',
+        name: '制造业',
+        component: () => import('@/views/infos/infos'),
+        meta: { title: '制造业', icon: 'table' }
+      },
+      {
+        path: '/8',
+        name: '企业',
+        component: () => import('@/views/infos/infos'),
+        meta: { title: '企业', icon: 'table' }
+      },
+      {
+        path: '/9',
+        name: '互联网行业',
+        component: () => import('@/views/infos/infos'),
+        meta: { title: '互联网行业', icon: 'table' }
+      },
+      {
+        path: '/10',
+        name: '基础架构评估',
+        component: () => import('@/views/infos/infos'),
+        meta: { title: '基础架构评估', icon: 'table' }
+      },
+      {
+        path: '/11',
+        name: '安全评估',
+        component: () => import('@/views/infos/infos'),
+        meta: { title: '安全评估', icon: 'table' }
+      },
+      {
+        path: '/12',
+        name: 'RMA备件服务',
+        component: () => import('@/views/infos/infos'),
+        meta: { title: 'RMA备件服务', icon: 'table' }
+      },
+      {
+        path: '/13',
+        name: '现场技术支持服务',
+        component: () => import('@/views/infos/infos'),
+        meta: { title: '现场技术支持服务', icon: 'table' }
       }
     ]
   },
